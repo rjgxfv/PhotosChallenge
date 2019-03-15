@@ -1,24 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ldG-mN-QQC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Photo View Controller-->
+        <scene sceneID="NPd-SQ-jc3">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="uYo-aa-nsy" customClass="PhotoViewController" customModule="PhotoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O6o-g9-k4i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MgK-wm-LqJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="a5m-kU-SWc" firstAttribute="trailing" secondItem="MgK-wm-LqJ" secondAttribute="trailing" id="CBq-R0-V4l"/>
+                            <constraint firstItem="MgK-wm-LqJ" firstAttribute="leading" secondItem="a5m-kU-SWc" secondAttribute="leading" id="GSa-DO-aPs"/>
+                            <constraint firstItem="a5m-kU-SWc" firstAttribute="bottom" secondItem="MgK-wm-LqJ" secondAttribute="bottom" id="eg2-8S-5eG"/>
+                            <constraint firstItem="MgK-wm-LqJ" firstAttribute="top" secondItem="a5m-kU-SWc" secondAttribute="top" id="nmg-Sn-oyC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a5m-kU-SWc"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="camera" id="0dz-a1-WnS">
+                            <connections>
+                                <action selector="camera:" destination="uYo-aa-nsy" id="3gU-H8-mbf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="organize" id="j7h-uM-rIG">
+                            <connections>
+                                <action selector="library:" destination="uYo-aa-nsy" id="4wD-i4-GC6"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="zDT-eN-Dgm"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="picture" destination="MgK-wm-LqJ" id="TrV-xS-BGi"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drF-D9-39C" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="874" y="204"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Jh-rq-n3m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="ldG-mN-QQC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UMF-Wm-rwE">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RnT-Xg-sA5">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="uYo-aa-nsy" kind="relationship" relationship="rootViewController" id="Zwh-j4-p69"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b2w-Vu-HcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273" y="-564"/>
         </scene>
     </scenes>
 </document>
